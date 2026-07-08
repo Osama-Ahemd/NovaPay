@@ -4,17 +4,17 @@ using NovaPay.Api.Models;
 namespace NovaPay.Api
 {
 
-    public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+    public class AppDbContext(DbContextOptions options) : DbContext(options)
     {
-        public DbSet<Business> Businesses { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Currency> Currencies { get; set; }
-        public DbSet<Account> Accounts { get; set; }
-        public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<ExchangeRate> ExchangeRates { get; set; }
-        public DbSet<PricingPlan> PricingPlans { get; set; }
-        public DbSet<Subscription> Subscriptions { get; set; }
-        public DbSet<SecurityEvent> SecurityEvents { get; set; }
+        public DbSet<Business> Businesses => Set<Business>();
+        public DbSet<User> Users => Set<User>();
+        public DbSet<Currency> Currencies => Set<Currency>();
+        public DbSet<Account> Accounts => Set<Account>();
+        public DbSet<Transaction> Transactions => Set<Transaction>();
+        public DbSet<ExchangeRate> ExchangeRates => Set<ExchangeRate>();
+        public DbSet<PricingPlan> PricingPlans => Set<PricingPlan>();
+        public DbSet<Subscription> Subscriptions => Set<Subscription>();
+        public DbSet<SecurityEvent> SecurityEvents => Set<SecurityEvent>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
